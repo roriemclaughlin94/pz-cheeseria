@@ -4,7 +4,7 @@ import { Cheese } from '../models';
 export const CheeseActions = {
 
 	loadCheeses: createAction("LOAD_CHEESES"),
-	loadCheesesSuccess: createAction("LOAD_CHEESES_SUCCESS", (cheeses) => ({ cheeses })),
+	loadCheesesSuccess: createAction("LOAD_CHEESES_SUCCESS", (cheeses: Cheese[]) => ({ cheeses })),
 	deleteCheese: createAction("DELETE_CHEESE", (id: boolean) => ({ id })),
 	deleteCheeseSuccess: createAction("DELETE_CHEESE", (id: boolean) => ({ id })),
 	addCheese: createAction("ADD_CHEESE", (cheese: Cheese) => ({ cheese })),

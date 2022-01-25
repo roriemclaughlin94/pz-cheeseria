@@ -1,1 +1,16 @@
-HELLLOOOO
+<button mat-flat-button color="primary" (click)="calculateDialog()">Calculate the cost of your next cheese party here!</button>
+<div class="two-columns">
+	<ng-container *ngFor="let cheese of (cheeses$ | async)">
+		<mat-card>
+			<h3 style="text-align: center;">{{cheese.name}}</h3>
+			<div class="center"><img style="margin: auto;" [src]="cheese.image"></div>
+			<div class="center">
+				<span><b>Colour: {{cheese.colour}}</b></span>
+				<br>
+				<span><b>Price per KG: {{cheese.pricePerKG | currency}}</b></span>
+				<br>
+			</div>
+		</mat-card>
+
+	</ng-container>
+</div>

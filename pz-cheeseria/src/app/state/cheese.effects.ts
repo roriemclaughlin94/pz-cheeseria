@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { exhaustMap, catchError, map } from 'rxjs/operators';
 import { CheeseActions } from './cheese.actions';
 import { CheeseService } from '../services';
+import { Cheese } from '../models';
 
 
 @Injectable()
@@ -15,7 +16,7 @@ export class CheeseEffects {
 		ofType(CheeseActions.loadCheeses),
 		exhaustMap(() =>
 			this.cheeseService.getCheeses().pipe(
-				map((cheeses) => CheeseActions.loadCheesesSuccess({ cheeses })),
+				map((cheeses: Cheese[]) => CheeseActions.loadCheesesSuccess(cheeses)),
 				catchError(error => of(CheeseActions.error()))
 			))));
 

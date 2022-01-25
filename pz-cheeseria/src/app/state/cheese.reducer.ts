@@ -16,6 +16,14 @@ const reducer = createReducer(
 			loadingCheese: state.cheeses ? false : true //Only set loading on initial load
 		})
 	),
+	on(
+		CheeseActions.loadCheesesSuccess,
+		(state, { cheeses }) => ({
+			...state,
+			loadingCheese: false,
+			cheeses
+		})
+	)
 
 );
 
