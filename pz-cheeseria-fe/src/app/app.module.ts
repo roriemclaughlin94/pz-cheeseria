@@ -12,10 +12,11 @@ import { MatInputModule } from '@angular/material/input';
 import { EffectsModule } from '@ngrx/effects';
 import { CheeseEffects, CheeseFeature } from './state';
 import { StoreModule } from '@ngrx/store';
-import { CheeseService } from './services';
+import { CheeseService, SnackbarService } from './services';
 import { HttpClientModule } from '@angular/common/http';
 import { metaReducers, rootReducers } from './rootReducers';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 
 @NgModule({
 	declarations: [
@@ -40,10 +41,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 		MatCardModule,
 		MatDialogModule,
 		MatInputModule,
-		MatSelectModule
+		MatSelectModule,
+		MatSnackBarModule
 	],
 
-	providers: [CheeseService, CheeseCalculatorComponent],
+	providers: [CheeseService, CheeseCalculatorComponent, SnackbarService,
+		{ provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 5000, verticalPosition: 'top' } }],
 	bootstrap: [RootComponent]
 })
 

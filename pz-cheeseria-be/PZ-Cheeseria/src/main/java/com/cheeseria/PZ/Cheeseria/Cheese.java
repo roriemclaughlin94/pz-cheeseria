@@ -21,7 +21,7 @@ public class Cheese {
 
 		this.name = name;
 		this.pricePerKG = pricePerKG;
-		this.image = image; //TODO kibosh string and use a byte[]
+		this.image = image; // TODO kibosh string and use a byte[]
 		this.colour = colour;
 	}
 

@@ -12,6 +12,7 @@ export class CheeseFormComponent {
 	@Input() cheese: Cheese;
 	@Output() updateCheese = new EventEmitter();
 	@Output() deleteCheese = new EventEmitter();
+	@Output() addCheese = new EventEmitter();
 	formGroup = new FormGroup({
 		id: new FormControl(""),
 		name: new FormControl(null, Validators.required),
@@ -21,7 +22,9 @@ export class CheeseFormComponent {
 	});
 
 	ngOnInit() {
-		this.formGroup.patchValue(this.cheese);
+		if (this.cheese) {
+			this.formGroup.patchValue(this.cheese);
+		}
 	}
 
 	update() {
@@ -31,5 +34,9 @@ export class CheeseFormComponent {
 
 	delete() {
 		this.deleteCheese.emit(this.formGroup.get('id')?.value)
+	}
+
+	add() {
+		this.addCheese.emit(this.formGroup.value)
 	}
 }

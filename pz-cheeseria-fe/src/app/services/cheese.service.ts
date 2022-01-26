@@ -13,10 +13,14 @@ export class CheeseService extends ApiService {
 	}
 
 	updateCheese(cheese: Cheese) {
-		return this.put(`${this.apiURL}/add-cheese`, cheese)
+		return this.put(`${this.apiURL}/${cheese.id}`, cheese)
 	}
 
 	deleteCheese(id: number) {
 		return this.delete(`${this.apiURL}/${id}`)
+	}
+
+	addCheese(cheese: Cheese) {
+		return this.post(`${this.apiURL}/add-cheese`, cheese)
 	}
 }

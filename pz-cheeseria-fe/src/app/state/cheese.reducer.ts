@@ -24,7 +24,6 @@ const reducer = createReducer(
 			cheeses
 		})
 	)
-
 );
 
 export function cheeseReducer(state: CheeseState | undefined, action: Action) {

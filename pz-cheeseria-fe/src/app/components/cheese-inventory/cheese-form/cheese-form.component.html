@@ -1,13 +1,20 @@
 <form>
+	<h2 *ngIf="!cheese" style="text-align: center;">New Cheese</h2>
 	<div class="two-columns">
 		<input-control [control]="formGroup.get('name')" label="Name"></input-control>
 		<input-control [control]="formGroup.get('image')" label="Image"></input-control>
-		<input-control [control]="formGroup.get('pricePerKG')" label="Price Per KG ($)"></input-control>
+		<input-control [control]="formGroup.get('pricePerKG')" label="Price Per KG ($)" inputType="number"></input-control>
 		<input-control [control]="formGroup.get('colour')" label="Colour"></input-control>
 	</div>
 </form>
-<div class="two-columns">
+<div *ngIf="cheese; else newCheese" class="two-columns">
 	<button [disabled]="(!formGroup?.touched || formGroup?.pristine || !formGroup.valid)" mat-flat-button color="primary" (click)="update()">Update</button>
 	<!-- Check logic around deleting - if not in backend, can't delete e2e -->
 	<button mat-stroked-button color="primary" (click)="delete()">Delete</button> 
 </div>
+
+<ng-template #newCheese>
+	<div class="center">
+		<button [disabled]="!formGroup.valid" mat-stroked-button color="primary" (click)="add()">Add Cheese</button> 
+	</div>
+</ng-template>

@@ -10,6 +10,7 @@ import { CheeseActions, CheeseSelectors } from "src/app/state";
 
 export class CheeseInventoryComponent {
 	cheeses$ = this.store.select(CheeseSelectors.selectCheeses);
+	arr = Array;
 
 	constructor(private store: Store) { }
 
@@ -19,5 +20,9 @@ export class CheeseInventoryComponent {
 
 	delete(cheeseId: number) {
 		this.store.dispatch(CheeseActions.deleteCheese(cheeseId))
+	}
+
+	add(cheese: Cheese) {
+		this.store.dispatch(CheeseActions.addCheese(cheese));
 	}
 }

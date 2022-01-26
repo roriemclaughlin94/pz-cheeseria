@@ -8,8 +8,24 @@
 				<img style="margin: auto;" [src]="cheese.image">
 			</div>
 			<div class="center">
-				<cheese-form [cheese]="cheese" (updateCheese)="update($event)" (deleteCheese)="delete($event)"></cheese-form>
+				<cheese-form [cheese]="cheese" (updateCheese)="update($event)" (deleteCheese)="delete($event)">
+				</cheese-form>
 			</div>
 		</mat-card>
+	</ng-container>
+	<ng-container *ngIf="(cheeses$ | async).length < 6">
+		<ng-container *ngFor="let missingCheese of arr(5 - ((cheeses$ | async)?.length))">
+			<mat-card style="margin: 10px; text-align: center; height: fit-content;">
+				<cheese-form (updateCheese)="update($event)" (deleteCheese)="delete($event)" (addCheese)="add($event)">
+				</cheese-form>
+			</mat-card>
+		</ng-container>
+		<ng-container *ngIf="(cheeses$ | async).length === 5">
+			<mat-card style="margin: 10px; text-align: center; height: fit-content;">
+				<h2>Error Handling Example</h2>
+				<cheese-form (updateCheese)="update($event)" (deleteCheese)="delete($event)" (addCheese)="add($event)">
+				</cheese-form>
+			</mat-card>
+		</ng-container>
 	</ng-container>
 </div>
