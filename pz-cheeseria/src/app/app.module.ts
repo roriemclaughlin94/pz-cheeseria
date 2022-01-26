@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { CheeseCalculatorComponent, CheeseInventoryComponent, CheeseSelectionComponent, RootComponent } from './components';
+import { CheeseCalculatorComponent, CheeseFormComponent, CheeseInventoryComponent, CheeseSelectionComponent, InputControlComponent, RootComponent } from './components';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card'
@@ -23,7 +23,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 		HomeComponent,
 		CheeseSelectionComponent,
 		CheeseInventoryComponent,
-		CheeseCalculatorComponent
+		CheeseCalculatorComponent,
+		InputControlComponent,
+		CheeseFormComponent
 	],
 	imports: [
 		BrowserModule,

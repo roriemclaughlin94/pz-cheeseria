@@ -1,2 +1,15 @@
 <!-- Images of cheese, click to show form with details, delete button, update button -->
 <!-- Include an add button -->
+<div class="two-columns">
+	<ng-container *ngFor="let cheese of (cheeses$ | async)">
+		<mat-card style="margin: 10px;">
+			<h2 style="text-align: center;">{{cheese.name}}</h2>
+			<div class="center" style="margin-bottom: 20px;">
+				<img style="margin: auto;" [src]="cheese.image">
+			</div>
+			<div class="center">
+				<cheese-form [cheese]="cheese" (updateCheese)="update($event)" (deleteCheese)="delete($event)"></cheese-form>
+			</div>
+		</mat-card>
+	</ng-container>
+</div>

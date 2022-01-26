@@ -5,11 +5,8 @@
 	</mat-select>
 </mat-form-field>
 
-<mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
-	<mat-label>Enter cheese weight in grams</mat-label>
-	<input matInput [formControl]="formGroup.get('weightInGrams')" type="number" placeholder="Weight in grams">
-</mat-form-field>
+<input-control [control]="formGroup.get('weightInGrams')" type="number" label="Enter cheese weight in grams"></input-control>
 
-<h2 *ngIf="formGroup.valid">
+<h2 *ngIf="formGroup?.valid">
 	Total price based on {{formGroup.get('weightInGrams').value}}g: {{(formGroup.get('selectedCheese').value?.pricePerKG / 1000) * formGroup.get('weightInGrams').value | currency}}
 </h2>

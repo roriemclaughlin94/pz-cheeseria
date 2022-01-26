@@ -13,9 +13,22 @@ body {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(100px, 1fr));
 	width: 100%;
+
+	.mat-flat-button,
+	.mat-stroked-button {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
 }
 
 .center {
 	width: 100%;
 	text-align: center;
+}
+
+cheese-form {
+	input-control {
+		margin-right: 10px;
+		margin-left: 10px;
+	}
 }

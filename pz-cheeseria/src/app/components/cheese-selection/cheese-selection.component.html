@@ -2,7 +2,7 @@
 <div class="two-columns">
 	<ng-container *ngFor="let cheese of (cheeses$ | async)">
 		<mat-card>
-			<h3 style="text-align: center;">{{cheese.name}}</h3>
+			<h2 style="text-align: center;">{{cheese.name}}</h2>
 			<div class="center"><img style="margin: auto;" [src]="cheese.image"></div>
 			<div class="center">
 				<span><b>Colour: {{cheese.colour}}</b></span>
@@ -11,6 +11,5 @@
 				<br>
 			</div>
 		</mat-card>
-
 	</ng-container>
 </div>
