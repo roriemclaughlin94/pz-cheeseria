@@ -22,8 +22,8 @@ export class CheeseEffects {
 
 	updateCheese$ = createEffect(() => this.action$.pipe(
 		ofType(CheeseActions.updateCheese),
-		exhaustMap((cheese) =>
-			this.cheeseService.updateCheese().pipe(
+		exhaustMap(({ cheese }) =>
+			this.cheeseService.updateCheese(cheese).pipe(
 				map(() => CheeseActions.updateCheeseSuccess()),
 				catchError(error => of(CheeseActions.error()))
 			))));

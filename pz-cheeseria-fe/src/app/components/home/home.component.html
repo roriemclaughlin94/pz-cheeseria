@@ -1,7 +1,10 @@
-<mat-card style="height: 100%; width: 100%;">
+<mat-card>
 	<div class="two-columns" style="margin-bottom: 50px;">
-		<a [routerLink]="['/cheese-selection']"><button mat-stroked-button color="primary" style="width:100%; margin-top: 20px;">Cheese Selection</button></a>
-		<a [routerLink]="['../cheese-inventory']"><button mat-stroked-button color="primary" style="width:100%; margin-top: 20px;">Inventory</button></a>
+		<a [routerLink]="['/cheese-selection']" style="margin-right: 10px; margin-left: 10px;"><button
+				mat-stroked-button color="primary" style="width:100%; margin-top: 20px;">Cheese Selection</button></a>
+		<a [routerLink]="['../cheese-inventory']" style="margin-right: 10px; margin-left: 10px;"><button
+				mat-stroked-button color="primary" style="width:100%; margin-top: 20px;">Inventory
+				Management</button></a>
 	</div>
 	<router-outlet></router-outlet>
 </mat-card>
