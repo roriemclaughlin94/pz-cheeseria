@@ -41,7 +41,7 @@ public class CheeseController {
 	@ResponseStatus(HttpStatus.CREATED)
 	@ApiOperation(value = "Adds a new cheese.", notes = "Cheese inventory in this task is set to 5. If you attempt to create >5 cheeses this will fail")
 	Cheese addCheese(@RequestBody Cheese addCheese) {
-		if (repository.count() == 5) {
+		if (repository.count() >= 5) {
 			throw new StockFullException();
 		}
 
