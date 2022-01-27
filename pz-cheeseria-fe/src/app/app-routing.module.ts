@@ -12,6 +12,9 @@ const routes: Routes = [{
 	},{
 		path: 'cheese-inventory',
 		component: CheeseInventoryComponent
+	},{
+		path: '**',
+		redirectTo: 'cheese-selection'
 	}]
 }];
 

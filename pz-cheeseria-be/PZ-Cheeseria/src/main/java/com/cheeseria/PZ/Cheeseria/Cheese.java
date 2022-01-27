@@ -18,7 +18,6 @@ public class Cheese {
 	}
 
 	Cheese(String name, BigDecimal pricePerKG, String image, String colour) {
-
 		this.name = name;
 		this.pricePerKG = pricePerKG;
 		this.image = image; // TODO kibosh string and use a byte[]
