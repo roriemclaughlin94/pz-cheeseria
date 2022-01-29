@@ -5,7 +5,7 @@
 		<mat-card style="margin: 10px;">
 			<h2 style="text-align: center;">{{cheese.name}}</h2>
 			<div class="center" style="margin-bottom: 20px;">
-				<img style="margin: auto;" [src]="cheese.image">
+				<img style="margin: auto; max-width: 200px;" [src]="cheese.image">
 			</div>
 			<div class="center">
 				<cheese-form [cheese]="cheese" (updateCheese)="update($event)" (deleteCheese)="delete($event)">
