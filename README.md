@@ -30,5 +30,5 @@ Swagger accessible on http://localhost:8080/swagger-ui/#/
 - Success nods on the FE, cheese changes refresh the list without, say, a success banner
 - Backend has little error handling 
 - Add authentication, currently backend can be called from any domain
-
-TBC 
+- Get the multi-stage build pipeline working and investigate why the BE image is so huge 
+ 
